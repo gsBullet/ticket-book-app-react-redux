@@ -8,20 +8,26 @@ const initialState = {
 function ticketReducer(state = initialState, action) {
   switch (action?.type) {
     case BOOKTICKET:
-      return {
-        ...state,
-        ticket: [
-        ...state.ticket,
-          {
-            from: action.payload.from.value,
-            to: action.payload.to.value,
-            date: action.payload.date.value,
-            guests: action.payload.guests.value,
-            ticketclassName: action.payload.ticketclassName.value,
-          },
-        ],
-        isTicket: true,
-      };
+      if (state.ticket.length >2) {
+        return state; // If the ticket array already has 3 entries, return current state
+      }
+      else{
+        return {
+          ...state,
+          ticket: [
+          ...state.ticket,
+            {
+              from: action.payload.from.value,
+              to: action.payload.to.value,
+              date: action.payload.date.value,
+              guests: action.payload.guests.value,
+              ticketclassName: action.payload.ticketclassName.value,
+            },
+          ],
+          isTicket: true,
+        };
+
+      }
     case CANCELTICKET:
       return {
         ...state,

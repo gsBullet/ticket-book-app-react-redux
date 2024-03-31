@@ -34,6 +34,7 @@ const DataPreview = () => {
               {/* <!-- Row 1 --> */}
 
               {data.map((ticket, index) => (
+                
                 <tr key={index} className="lws-bookedTable text-black">
                   <td className="px-6 py-4">
                     <div className="flex items-center space-x-3">
@@ -78,6 +79,7 @@ const DataPreview = () => {
                     </div>
                   </td>
                 </tr>
+               
               ))}
             </tbody>
           </table>

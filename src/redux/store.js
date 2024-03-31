@@ -1,6 +1,6 @@
-import { createStore , applyMiddleware} from "redux";
+import { createStore } from "redux";
 import ticketReducer from "./ticketReducer";
-import logger from "redux-logger";
+// import logger from "redux-logger";
 
 
 // ******custom logger *******
